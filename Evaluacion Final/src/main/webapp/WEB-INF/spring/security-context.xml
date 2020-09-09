@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bean:beans
+	xmlns:bean="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd 
+        http://www.springframework.org/schema/security 
+        http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http use-expressions="true" auto-config="true">
+		<intercept-url pattern="/" access="permitAll" />
+		<intercept-url pattern="/Admin/**" access="hasRole('ADMIN')" />
+		<intercept-url pattern="/Cliente/**" access="hasRole('CLIENTE')" />
+		<intercept-url pattern="/Profesional/**" access="hasRole('PROFESIONAL')" />
+		<form-login login-page="/irLogin.html" 
+			authentication-success-handler-ref="myAuthenticationSuccessHandler"
+			authentication-failure-url="/errorLogin.html"
+			username-parameter="username" password-parameter="password"/>
+		<csrf disabled="true" />
+        <logout logout-success-url="/irLogin.html" />
+	</http>
+	
+	<bean:bean id="myAuthenticationSuccessHandler" class="cl.awakelab.nmd.security.MySimpleUrlAuthenticationSuccessHandler"/>
+
+	<authentication-manager>
+		<authentication-provider>
+			<password-encoder hash="bcrypt" />
+			<jdbc-user-service data-source-ref="ds"
+				users-by-username-query="select usuario as username, contrasena as password, 1 as enabled from usuario where usuario = ?"
+				authorities-by-username-query="select u.usuario as username, ur.rol as authority from usuario u, perfil_usuario ur where u.id_usuario = ur.id_usuario and u.id_usuario = (SELECT id_usuario from usuario where usuario = ?)" />
+		</authentication-provider>
+	</authentication-manager>
+
+</bean:beans>

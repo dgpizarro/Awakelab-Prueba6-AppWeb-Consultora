@@ -1,0 +1,791 @@
+/*******************1) Estilos constantes, body, main, footer, font-family, flex, columnas mobile 100%************/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	background: linear-gradient(to top, #757f9a, #d7dde8);
+	min-height: 100%;
+}
+
+main {
+	padding-left: 1em;
+	padding-right: 1em;
+	width: 100%;
+	padding-top: 0;
+	display: flex;
+	flex-flow: row wrap;
+	padding-bottom: 2em;
+	min-height: auto;
+}
+
+main::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+a:-webkit-any-link {
+	text-decoration: none;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+	width: 100%;
+}
+
+.ui-widget {
+	font-family: 'Montserrat' !important;
+}
+
+.ui-dialog {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.grande {
+	width: 90% !important;
+}
+
+.chica, .dialog-calendario {
+	width: 90% !important;
+}
+
+.ui-dialog .ui-dialog-content {
+	padding: 1em 2em;
+}
+
+.ui-widget {
+	font-size: 0.8em;
+}
+
+.ui-tabs {
+	font-size: 1em;
+}
+
+.ui-tabs-header {
+	font-size: 1.1em;
+}
+
+.ui-helper-reset {
+	line-height: 1em;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+	.ui-tabs .ui-tabs-nav li.ui-tabs-loading a {
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to bottom, #0575e6, #021b79);
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button
+	{
+	font-family: 'Montserrat';
+	font-size: 1em;
+}
+
+.grande .ui-widget-header {
+	background: linear-gradient(to bottom, #0575e6, #021b79);
+	border: none;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.chica .ui-widget-header, .dialog-calendario .ui-widget-header {
+	background: rgb(255, 230, 0);
+	border: none;
+}
+
+.dialog-calendario .ui-widget-header {
+	text-align: center;
+}
+
+.chica .ui-dialog-titlebar-close {
+	display: none;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+	float: inherit;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+	text-align: center;
+}
+
+.ui-button-text {
+	font-weight: bold;
+}
+
+@media only screen and (max-width: 550px) {
+	.fc .fc-toolbar {
+		display: block !important;
+	}
+	.fc .fc-toolbar-title {
+		font-size: 1.5em;
+		margin: 0.2em 0;
+	}
+	.fc-direction-ltr {
+		text-align: center;
+	}
+	.fc-direction-ltr .fc-toolbar>*>:not(:first-child) {
+		margin-left: 2em;
+	}
+	.fc .fc-button {
+		padding: 0 .65em;
+	}
+}
+
+.tablaNoDinamica {
+	font-family: 'Montserrat';
+	width: 100%;
+	border-spacing: 0;
+}
+
+.tablaNoDinamica th, .tablaNoDinamica td {
+	border-right: none;
+	border-bottom: 1px solid rgb(192, 192, 192);
+	padding: 0.3em;
+	text-align: left;
+}
+
+.tablaNoDinamica tr:hover {
+	background-color: #ebe8e8;
+}
+/***************************************************************************************************************/
+.enfasisP {
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 0.5em;
+	margin-top: 0.2em;
+}
+
+#cabecerafija2 {
+	width: 100%;
+	height: 3.8em;
+	margin: 0;
+	background: linear-gradient(to top, #000000, #434343);
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.logo {
+	float: left;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 0.6em;
+}
+
+#logoheader {
+	height: 2.5em;
+	width: auto;
+}
+
+.titulo-cabecera-fija {
+	float: left;
+	height: 3.8em;
+	padding-bottom: 0.5em;
+	padding-top: 0.6em;
+	width: 80%;
+	margin-left: -0.8em;
+}
+
+#tituloHI {
+	float: left;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: rgb(255, 230, 0);
+	letter-spacing: 4px;
+	width: 100%;
+}
+
+#tituloSubHI {
+	float: left;
+	font-weight: bold;
+	font-size: 0.6em;
+	color: whitesmoke;
+	margin-left: 0;
+	margin-top: 0.2em;
+	width: 100%;
+}
+
+.titulo-pag {
+	background: linear-gradient(to bottom, #0575e6, #021b79);
+	margin-bottom: 0.3em;
+	margin-top: 0.5em;
+	padding: 0.5em;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	color: whitesmoke;
+	border-radius: 3px;
+}
+
+.tituloInterno {
+	text-align: center;
+	width: 90%;
+	line-height: 2.2em;
+	margin: 0.1em auto 1em auto;
+	box-shadow: 0 4px 2px -2px gray;
+	color: white;
+	background: linear-gradient(to top, #000000, #434343);
+	border-radius: 3px;
+}
+
+.titulo-pag p {
+	text-align: center;
+	line-height: 1em;
+	font-weight: bold;
+}
+
+#out {
+	width: 3em;
+	height: 1.5em;
+	float: right;
+	background-color: transparent;
+	border: none;
+	font-size: 1.5em;
+	inline-size: 1em;
+	outline: none;
+	margin: 0.6em 1em 0 0;
+	color: whitesmoke;
+}
+
+.ui-tabs .ui-tabs-panel {
+	padding: 0.2em;
+}
+
+nav {
+	float: left;
+	margin-top: 0.2em;
+	margin-left: 1em;
+	font-weight: bold;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	margin-right: 1em;
+}
+
+nav ul li {
+	display: inline-block;
+	line-height: 1.5em;
+	background-color: rgb(255, 230, 0);
+	border-radius: 2.5px;
+	margin-bottom: 0.2em;
+}
+
+nav ul li a {
+	display: block;
+	padding: 0 1em;
+	text-decoration: none;
+	font-size: 0.9em;
+}
+
+a:link, a:visited {
+	color: rgb(92, 92, 92);
+}
+
+nav ul li a:hover {
+	background: black;
+	color: whitesmoke;
+	border-radius: 2.5px;
+}
+
+body.home a.home:link, body.reciclado a.reciclado:link, body.compost a.compost:link,
+	body.boletas a.boletas:link {
+	background: black;
+}
+
+.pestañas {
+	width: 100%;
+	margin: 1.5em auto;
+	font-size: small;
+	font-family: 'Montserrat', sans-serif;
+	text-align: justify;
+}
+
+.cont-text-pag {
+	background: rgb(235, 235, 235);
+	background: linear-gradient(0deg, rgba(235, 235, 235, 1) 0%,
+		rgba(255, 255, 255, 1) 100%);
+	margin-bottom: 1em;
+	padding: 1em;
+	text-align: justify;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	color: rgb(92, 92, 92);
+	font-size: small;
+	border-radius: 3px;
+	background: linear-gradient(0deg, rgba(235, 235, 235, 1) 0%,
+		rgba(255, 255, 255, 1) 100%);
+}
+
+.cont-text-pag-tabla {
+	background: rgb(235, 235, 235);
+	background: linear-gradient(0deg, rgba(235, 235, 235, 1) 0%,
+		rgba(255, 255, 255, 1) 100%);
+	margin-bottom: 1em;
+	padding: 0.3em;
+	text-align: justify;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	color: rgb(92, 92, 92);
+	font-size: small;
+	border-radius: 3px;
+	background: linear-gradient(0deg, rgba(235, 235, 235, 1) 0%,
+		rgba(255, 255, 255, 1) 100%);
+}
+
+.cont-text-pag a {
+	text-decoration: none;
+	color: rgb(92, 92, 92);
+	font-weight: bold;
+}
+
+footer {
+	background-color: #000000;
+	width: 100%;
+	height: 200px;
+	color: whitesmoke;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.copy {
+	width: 100%;
+	margin: 2em auto 1em auto;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.fono {
+	width: 100%;
+	margin: 0 auto 1em auto;
+	text-align: center;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+.rrss {
+	width: 33%;
+	margin: 1em auto;
+	text-align: center;
+	font-size: 0.7em;
+}
+
+.formContacto {
+	width: 90%;
+	margin: auto;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+.formContacto span {
+	color: rgb(92, 92, 92);
+}
+
+.formContacto input, select {
+	width: 100%;
+	margin-bottom: 0.5em;
+	color: rgb(92, 92, 92);
+	line-height: 1.5em;
+	border: 1px solid;
+	border-radius: 5px;
+	padding: 0.1em 1em;
+	outline: none;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.formContacto input:focus, .formContacto select:focus, .detalleTA:focus
+	{
+	border: 2px solid rgb(9, 83, 219);
+}
+
+.divideRegistro input {
+	width: 5%;
+	margin: 0;
+	box-shadow: none;
+}
+
+.buscaForm {
+	display: flex;
+}
+
+.buscaForm1 {
+	width: 95%;
+}
+
+.buscaForm2 {
+	width: 5%;
+	text-align: center;
+	font-size: 100%;
+	font-weight: bold;
+}
+
+.detalleTA {
+	width: 100%;
+	resize: none;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #FFFFFF;
+	border: 1px solid;
+	border-radius: 5px;
+	line-height: 1.5em;
+	padding: 0.8em;
+	outline: none;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btnForm {
+	width: 50%;
+	margin: 1em 25% 0 25%;
+	line-height: 2em;
+	background: linear-gradient(to bottom, #0575e6, #021b79);
+	border: none;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-radius: 5px;
+	outline: none;
+}
+
+.separadorForm {
+	border-bottom: 1px solid rgb(9, 83, 219);
+	box-shadow: 0 3px 2px -2px gray;
+	border-bottom: 2px solid rgb(9, 83, 219);
+	margin: 1em 0;
+	padding-bottom: 0.5em;
+	font-weight: bold;
+	color: rgb(92, 92, 92)
+}
+
+.seccionForm {
+	padding: 0.5em 1em;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+form .error {
+	color: red;
+	font-weight: bold;
+	margin-bottom: 0.5em;
+}
+
+.miniBtn {
+	background: linear-gradient(to top, #232526, #414345);
+}
+
+.sidebar {
+	position: fixed;
+	height: 100%;
+	width: 0;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-color: black;
+	overflow-x: hidden;
+	transition: 0.2s;
+	padding: 0;
+	box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.12), 1px 1px 2px
+		rgba(0, 0, 0, 0.24);
+}
+
+.sidebar .boton-cerrar {
+	position: absolute;
+	top: 0.5em;
+	right: 0.2em;
+	font-size: 2em;
+	display: block;
+	padding: 0;
+	line-height: 1.5rem;
+	margin: 0;
+	height: 32px;
+	width: 32px;
+	text-align: center;
+	vertical-align: top;
+	color: whitesmoke;
+}
+
+.sidebar ul, .sidebar li {
+	margin: 0.5em 0;
+	padding: 0;
+	list-style: none inside;
+	text-align: left;
+}
+
+.sidebar ul li {
+	background-color: rgb(255, 230, 0);
+	border: none;
+	padding-left: 0.5em;
+}
+
+.sidebar ul {
+	margin: 3.8em auto;
+	display: block;
+	width: 100%;
+	min-width: 100%;
+}
+
+.sidebar ul li a {
+	display: block;
+	line-height: 2em;
+	color: rgb(92, 92, 92);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.sidebar a:hover {
+	color: rgb(92, 92, 92);
+}
+
+#contenido {
+	transition: margin-left 0.4s;
+}
+
+.sinMora {
+	width: 40%;
+	margin: 0.5em auto;
+	height: 2em;
+	background-color: rgb(114, 235, 114);
+	border-radius: 4px;
+	text-align: center;
+	font-weight: bold;
+	padding: 0.3em;
+}
+
+.conMora {
+	width: 40%;
+	margin: 0.5em auto;
+	height: 2em;
+	background-color: rgb(230, 130, 130);
+	border-radius: 4px;
+	text-align: center;
+	font-weight: bold;
+	padding: 0.3em;
+}
+
+.nMes {
+	font-weight: bold;
+	font-size: 1.3em !important;
+	color: rgb(26, 26, 206);
+}
+
+#calendar {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	font-size: 1em;
+	font-family: 'Montserrat';
+}
+
+.coloresEventos {
+	width: 100%;
+	height: 3.5em;
+	display: flex;
+	flex-flow: row wrap;
+	padding: 0;
+}
+
+#colorA, #colorC, #colorV {
+	text-align: center;
+	width: 30%;
+	height: 1.1em;
+	line-height: 1.1em;
+	margin: auto;
+	border-radius: 4px;
+	font-weight: bold;
+}
+
+#colorC {
+	color: white;
+	background: #2E2E2E;
+}
+
+#colorV {
+	color: black;
+	background: #D7DF01;
+}
+
+#colorA {
+	color: black;
+	background: #58ACFA;
+}
+
+/***************** 2) Estilo media only max-width:415px ****************************************************/
+@media only screen and (max-width: 400px) {
+	.rrss {
+		width: 100%;
+	}
+	footer {
+		height: 270px;
+	}
+}
+
+/***************************************************************************************************************/
+
+/***************** 3) Estilo media only min-width: 600px ****************************************************/
+@media only screen and (min-width: 600px) {
+	/* For tablets: */
+	.col-1 {
+		width: 100%;
+	}
+	.cont-text-pag {
+		padding: 2em;
+	}
+	.cont-text-pag span {
+		font-size: 1em;
+	}
+	.rrss {
+		font-size: 0.9em;
+	}
+	.titulo-cabecera-fija {
+		height: 3.5em;
+		padding-bottom: 0.4em;
+		padding-top: 0.9em;
+		width: 88%;
+		margin-left: -0.8em;
+	}
+	#tituloHI {
+		font-size: 1.8em;
+		width: auto;
+	}
+	#tituloSubHI {
+		font-size: 0.75em;
+		margin-left: 0.5em;
+		margin-top: 1.35em;
+		width: auto;
+	}
+	.grande {
+		width: 70% !important;
+	}
+	.chica, .dialog-calendario {
+		width: 60% !important;
+	}
+	.nMes {
+		font-weight: bold;
+		font-size: 1.5em !important;
+		color: rgb(26, 26, 206);
+	}
+}
+
+/***************************************************************************************************************/
+
+/***************** 4) Estilo media only min-width: 705px ****************************************************/
+@media only screen and (min-width: 705px) {
+	.titulo-cabecera-fija {
+		height: 3.5em;
+		padding-bottom: 0.4em;
+		padding-top: 0.9em;
+		width: 65%;
+	}
+	#tituloHI {
+		font-size: 2em;
+	}
+	#tituloSubHI {
+		font-size: 0.9em;
+		margin-left: 2em;
+		margin-top: 1.3em;
+	}
+}
+
+/***************** 5) Estilo media only min-width: 800px ****************************************************/
+@media only screen and (min-width: 800px) {
+	/* For desktop: */
+	.col-2 {
+		width: 49.5%;
+		margin: 0.2em auto;
+	}
+	.col-3 {
+		width: 65%;
+		margin: 0.2em auto;
+	}
+	.col-4 {
+		width: 34%;
+		margin: 0.2em auto;
+	}
+	.col-5 {
+		width: 70%;
+		margin: 0.2em auto;
+	}
+	.col-6 {
+		width: 29%;
+		margin: 0.2em auto;
+	}
+	main {
+		padding-left: 4em;
+		padding-right: 4em;
+		padding-top: 0;
+	}
+	.logo {
+		margin-left: 3em;
+		margin-top: 0.5em;
+		height: 3.2em;
+	}
+	#logoheader {
+		height: 3.2em;
+		width: auto;
+	}
+	nav {
+		margin-right: 4em;
+		margin-left: 0;
+	}
+	nav ul {
+		margin-right: 0;
+		margin-left: 4em;
+	}
+	p {
+		font-size: 1em;
+	}
+	.titulo-pag {
+		padding: 0.4em;
+		margin-top: 1em;
+	}
+	.titulo-pag p {
+		line-height: 1.1em;
+	}
+	#cabecerafija2 {
+		height: 3em;
+	}
+	.titulo-cabecera-fija {
+		height: 3em;
+		padding-top: 0.1em;
+		width: 65%;
+		margin-left: 0;
+	}
+	#tituloHI {
+		font-size: 2.5em;
+	}
+	#tituloSubHI {
+		font-size: 0.8em;
+		margin-left: 2em;
+		margin-top: 1.9em;
+	}
+	#out {
+		margin: 0.3em 2.8em 0 1em;
+	}
+	.grande {
+		width: 65% !important;
+	}
+	.chica, .dialog-calendario {
+		width: 30% !important;
+	}
+	.formContacto {
+		width: 60%;
+		font-size: 1em;
+	}
+	#colorA, #colorC, #colorV {
+		height: 1.6em;
+		line-height: 1.6em;
+	}
+}
+
+@media only screen and (min-width: 1251px) {
+	nav ul {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}

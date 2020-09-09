@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+        <property name="username" value="evaluacionfinal"></property>
+        <property name="password" value="evaluacionfinal"></property>
+    </bean>
+    
+    <bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="ds"></property>
+    </bean>
+	
+	 <bean id="AccidenteDAO" class="cl.awakelab.nmd.DAO.AccidenteDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="ActividadDAO" class="cl.awakelab.nmd.DAO.ActividadDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="AsesoriaDAO" class="cl.awakelab.nmd.DAO.AsesoriaDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="AsistenteDAO" class="cl.awakelab.nmd.DAO.AsistenteDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="CapacitacionDAO" class="cl.awakelab.nmd.DAO.CapacitacionDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="CheckListDAO" class="cl.awakelab.nmd.DAO.CheckListDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+    <bean id="ClienteDAO" class="cl.awakelab.nmd.DAO.ClienteDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="CumplTareaDAO" class="cl.awakelab.nmd.DAO.Cumplimiento_TareaDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="EventoAsesorDAO" class="cl.awakelab.nmd.DAO.EventoAsesoriaDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+    <bean id="EventoDAO" class="cl.awakelab.nmd.DAO.EventoDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="InformeVisitaDAO" class="cl.awakelab.nmd.DAO.InformeVisitaDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="LugarDAO" class="cl.awakelab.nmd.DAO.LugarDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="MensajeDAO" class="cl.awakelab.nmd.DAO.MensajeDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="PagosDAO" class="cl.awakelab.nmd.DAO.PagosDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="Perfil_UsuarDAO" class="cl.awakelab.nmd.DAO.Perfil_UsuarioDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="ProfesionalDAO" class="cl.awakelab.nmd.DAO.ProfesionalDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="Prop_MejorasDAO" class="cl.awakelab.nmd.DAO.Prop_MejorasDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="Report_ClienteDAO" class="cl.awakelab.nmd.DAO.Reporte_ClienteDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="Report_GlobalDAO" class="cl.awakelab.nmd.DAO.Reporte_GlobalDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="TareaDAO" class="cl.awakelab.nmd.DAO.TareaDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="UsuarioDAO" class="cl.awakelab.nmd.DAO.UsuarioDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+    
+     <bean id="VisitaDAO" class="cl.awakelab.nmd.DAO.VisitaDAO">
+    		<property name="template" ref="jt"></property>
+    </bean>
+</beans>
